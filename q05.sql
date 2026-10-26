@@ -1,0 +1,9 @@
+-- Q05: Calculate headline KPIs for completed orders
+SELECT
+    COUNT(*) AS total_orders,
+    SUM(amount) AS total_revenue,
+    ROUND(AVG(amount), 2) AS avg_order_value,
+    MIN(amount) AS min_order_value,
+    MAX(amount) AS max_order_value
+FROM orders
+WHERE status = 'completed';
